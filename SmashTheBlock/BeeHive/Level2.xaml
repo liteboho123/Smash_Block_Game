@@ -1,0 +1,43 @@
+﻿<Grid xmlns="http://schemas.microsoft.com/client/2007" xmlns:d="http://schemas.microsoft.com/expression/blend/2008" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:BeeHive="clr-namespace:BeeHive;assembly=BeeHive" mc:Ignorable="d" xmlns:i="clr-namespace:System.Windows.Interactivity;assembly=System.Windows.Interactivity" d:DesignWidth="640" d:DesignHeight="480">
+	<Grid.RowDefinitions>
+		<RowDefinition Height="0.577*"/>
+		<RowDefinition Height="0.423*"/>
+	</Grid.RowDefinitions>
+	<Canvas Width="464" Height="243" VerticalAlignment="Center" HorizontalAlignment="Center">
+		<i:Interaction.Triggers>
+			<BeeHive:ElementRemovedTrigger>
+				<BeeHive:GoToNextLevelAction/>
+			</BeeHive:ElementRemovedTrigger>
+		</i:Interaction.Triggers>
+	
+		<BeeHive:BlockControl Width="52" Style="{StaticResource YellowBlockStyle}" Height="48" Canvas.Left="412" Canvas.Top="120"/>
+		<BeeHive:BlockControl Width="52" Style="{StaticResource YellowBlockStyle}" Height="48" Canvas.Top="120"/>
+		<BeeHive:BlockControl Width="52" Style="{StaticResource YellowBlockStyle}" Height="48" Canvas.Left="42" Canvas.Top="195"/>
+		<BeeHive:BlockControl Width="52" Style="{StaticResource YellowBlockStyle}" Height="48" Canvas.Left="83" Canvas.Top="169"/>
+		<BeeHive:BlockControl Width="52" Style="{StaticResource YellowBlockStyle}" Height="48" Canvas.Left="42" Canvas.Top="96"/>
+		<BeeHive:BlockControl Width="52" Style="{StaticResource YellowBlockStyle}" Height="48" Canvas.Top="172"/>
+		<BeeHive:BlockControl Width="52" Style="{StaticResource YellowBlockStyle}" Height="48" Canvas.Left="411" Canvas.Top="170"/>
+		<BeeHive:BlockControl Width="52" Style="{StaticResource YellowBlockStyle}" Height="48" Canvas.Left="370" Canvas.Top="195"/>
+		<BeeHive:BlockControl Width="52" Style="{StaticResource YellowBlockStyle}" Height="48" Canvas.Left="329" Canvas.Top="170"/>
+		<BeeHive:BlockControl Width="52" Style="{StaticResource YellowBlockStyle}" Height="48" Canvas.Left="370" Canvas.Top="96"/>
+
+		<BeeHive:BlockControl Width="52" Style="{StaticResource OrangeBlockStyle}" Height="48" Canvas.Left="206" Canvas.Top="98"/>
+		<BeeHive:BlockControl Width="52" Style="{StaticResource OrangeBlockStyle}" Height="48" Canvas.Left="165" Canvas.Top="74"/>
+		<BeeHive:BlockControl Width="52" Style="{StaticResource OrangeBlockStyle}" Height="48" Canvas.Left="124" Canvas.Top="97"/>
+		<BeeHive:BlockControl Width="52" Style="{StaticResource OrangeBlockStyle}" Height="48" Canvas.Left="83" Canvas.Top="121"/>
+		<BeeHive:BlockControl Width="52" Style="{StaticResource OrangeBlockStyle}" Height="48" Canvas.Left="329" Canvas.Top="121"/>
+		<BeeHive:BlockControl Width="52" Style="{StaticResource OrangeBlockStyle}" Height="48" Canvas.Left="288" Canvas.Top="96"/>
+		<BeeHive:BlockControl Width="52" Style="{StaticResource OrangeBlockStyle}" Height="48" Canvas.Left="247" Canvas.Top="73"/>
+	
+		<BeeHive:BlockControl Width="52" Style="{StaticResource RedBlockStyle}" Height="48" Canvas.Left="205"/>
+		<BeeHive:BlockControl Width="52" Style="{StaticResource RedBlockStyle}" Height="48" Canvas.Left="162" Canvas.Top="26"/>
+		<BeeHive:BlockControl Width="52" Style="{StaticResource RedBlockStyle}" Height="48" Canvas.Left="247" Canvas.Top="25"/>
+	
+		<BeeHive:BlockControl Width="52" Style="{StaticResource BlueBlockStyle}" Height="48" Canvas.Left="41" Canvas.Top="145"/>
+		<BeeHive:BlockControl Width="52" Style="{StaticResource BlueBlockStyle}" Height="48" Canvas.Left="205" Canvas.Top="49"/>
+		<BeeHive:BlockControl Width="52" Style="{StaticResource BlueBlockStyle}" Height="48" Canvas.Left="164" Canvas.Top="123"/>
+		<BeeHive:BlockControl Width="52" Style="{StaticResource BlueBlockStyle}" Height="48" Canvas.Left="370" Canvas.Top="145"/>
+		<BeeHive:BlockControl Width="52" Style="{StaticResource BlueBlockStyle}" Height="48" Canvas.Left="247" Canvas.Top="123"/>
+	
+	</Canvas>
+</Grid>

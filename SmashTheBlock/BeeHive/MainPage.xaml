@@ -1,0 +1,282 @@
+﻿<UserControl
+	xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+	xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+	xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+	xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+	mc:Ignorable="d" 
+	xmlns:i="clr-namespace:System.Windows.Interactivity;assembly=System.Windows.Interactivity"
+	xmlns:vsm="clr-namespace:System.Windows;assembly=System.Windows"
+	xmlns:il="clr-namespace:Microsoft.Expression.Interactivity.Layout;assembly=Microsoft.Expression.Interactions"
+	xmlns:im="clr-namespace:Microsoft.Expression.Interactivity.Media;assembly=Microsoft.Expression.Interactions"
+	xmlns:ic="clr-namespace:Microsoft.Expression.Interactivity.Core;assembly=Microsoft.Expression.Interactions"
+	xmlns:System_Windows_Interactivity="clr-namespace:System.Windows.Interactivity;assembly=System.Windows.Interactivity"
+	xmlns:local="clr-namespace:BeeHive"
+	xmlns:System="clr-namespace:System;assembly=mscorlib"
+	xmlns:ii="clr-namespace:Microsoft.Expression.Interactivity.Input;assembly=Microsoft.Expression.Interactions"
+	x:Class="BeeHive.MainPage" d:DesignWidth="920" d:DesignHeight="674">
+
+	<Grid x:Name="LayoutRoot">
+		<Grid.Background>
+			<LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+				<GradientStop Color="#FF585D51" Offset="0.006"/>
+				<GradientStop Color="#FF000000" Offset="1"/>
+			</LinearGradientBrush>
+		</Grid.Background>
+		<VisualStateManager.VisualStateGroups>
+			<VisualStateGroup x:Name="GameStatus">
+				<VisualState x:Name="WaitStart">
+					<Storyboard RepeatBehavior="Forever">
+						<ObjectAnimationUsingKeyFrames BeginTime="00:00:00" Storyboard.TargetName="ClicktoStart" Storyboard.TargetProperty="(UIElement.Visibility)">
+							<DiscreteObjectKeyFrame KeyTime="00:00:00.7000000">
+								<DiscreteObjectKeyFrame.Value>
+									<Visibility>Visible</Visibility>
+								</DiscreteObjectKeyFrame.Value>
+							</DiscreteObjectKeyFrame>
+							<DiscreteObjectKeyFrame KeyTime="00:00:00.8000000">
+								<DiscreteObjectKeyFrame.Value>
+									<Visibility>Collapsed</Visibility>
+								</DiscreteObjectKeyFrame.Value>
+							</DiscreteObjectKeyFrame>
+							<DiscreteObjectKeyFrame KeyTime="00:00:00.9000000">
+								<DiscreteObjectKeyFrame.Value>
+									<Visibility>Collapsed</Visibility>
+								</DiscreteObjectKeyFrame.Value>
+							</DiscreteObjectKeyFrame>
+						</ObjectAnimationUsingKeyFrames>
+						<ObjectAnimationUsingKeyFrames BeginTime="00:00:00" Duration="00:00:00.0010000" Storyboard.TargetName="GameOver" Storyboard.TargetProperty="(UIElement.Visibility)">
+							<DiscreteObjectKeyFrame KeyTime="00:00:00">
+								<DiscreteObjectKeyFrame.Value>
+									<Visibility>Collapsed</Visibility>
+								</DiscreteObjectKeyFrame.Value>
+							</DiscreteObjectKeyFrame>
+						</ObjectAnimationUsingKeyFrames>
+					</Storyboard>
+				</VisualState>
+				<VisualState x:Name="StartGame">
+					<Storyboard>
+						<ObjectAnimationUsingKeyFrames BeginTime="00:00:00" Duration="00:00:00.0010000" Storyboard.TargetName="ClicktoStart" Storyboard.TargetProperty="(UIElement.Visibility)">
+							<DiscreteObjectKeyFrame KeyTime="00:00:00">
+								<DiscreteObjectKeyFrame.Value>
+									<Visibility>Collapsed</Visibility>
+								</DiscreteObjectKeyFrame.Value>
+							</DiscreteObjectKeyFrame>
+						</ObjectAnimationUsingKeyFrames>
+					</Storyboard>
+				</VisualState>
+				<VisualState x:Name="ShowGameOver">
+					<Storyboard>
+						<ObjectAnimationUsingKeyFrames BeginTime="00:00:00" Duration="00:00:00.0010000" Storyboard.TargetName="GameOver" Storyboard.TargetProperty="(UIElement.Visibility)">
+							<DiscreteObjectKeyFrame KeyTime="00:00:00">
+								<DiscreteObjectKeyFrame.Value>
+									<Visibility>Visible</Visibility>
+								</DiscreteObjectKeyFrame.Value>
+							</DiscreteObjectKeyFrame>
+						</ObjectAnimationUsingKeyFrames>
+					</Storyboard>
+				</VisualState>
+			</VisualStateGroup>
+			<VisualStateGroup x:Name="Levels">
+				<VisualState x:Name="Level1">
+					<Storyboard>   
+						<ColorAnimationUsingKeyFrames BeginTime="00:00:00" Duration="00:00:00.0010000" Storyboard.TargetName="background" Storyboard.TargetProperty="(Shape.Fill).(GradientBrush.GradientStops)[0].(GradientStop.Color)">
+							<EasingColorKeyFrame KeyTime="00:00:00" Value="#FF616E2D"/>
+						</ColorAnimationUsingKeyFrames>
+						<ColorAnimationUsingKeyFrames BeginTime="00:00:00" Duration="00:00:00.0010000" Storyboard.TargetName="masterHead_bg" Storyboard.TargetProperty="(Shape.Fill).(SolidColorBrush.Color)">
+							<EasingColorKeyFrame KeyTime="00:00:00" Value="#FF2A341A"/>
+						</ColorAnimationUsingKeyFrames>
+						<ColorAnimationUsingKeyFrames BeginTime="00:00:00" Duration="00:00:00.0010000" Storyboard.TargetName="footer" Storyboard.TargetProperty="(Shape.Fill).(SolidColorBrush.Color)">
+							<EasingColorKeyFrame KeyTime="00:00:00" Value="#FF4B5046"/>
+						</ColorAnimationUsingKeyFrames>
+						<ColorAnimationUsingKeyFrames BeginTime="00:00:00" Duration="00:00:00.0010000" Storyboard.TargetName="LayoutRoot" Storyboard.TargetProperty="(Panel.Background).(GradientBrush.GradientStops)[0].(GradientStop.Color)">
+							<EasingColorKeyFrame KeyTime="00:00:00" Value="#FF555B4C"/>
+						</ColorAnimationUsingKeyFrames>
+						<ObjectAnimationUsingKeyFrames BeginTime="00:00:00" Duration="00:00:00.0010000" Storyboard.TargetName="levelHostControl" Storyboard.TargetProperty="(LevelHostControl.HostFile)">
+							<DiscreteObjectKeyFrame KeyTime="00:00:00" Value="Level1.xaml"/>
+						</ObjectAnimationUsingKeyFrames>
+					</Storyboard>
+				</VisualState>
+				<VisualState x:Name="Level2">
+					<Storyboard>
+						<ColorAnimationUsingKeyFrames BeginTime="00:00:00" Duration="00:00:00.0010000" Storyboard.TargetName="background" Storyboard.TargetProperty="(Shape.Fill).(GradientBrush.GradientStops)[0].(GradientStop.Color)">
+							<EasingColorKeyFrame KeyTime="00:00:00" Value="#FF285F80"/>
+						</ColorAnimationUsingKeyFrames>
+						<ColorAnimationUsingKeyFrames BeginTime="00:00:00" Duration="00:00:00.0010000" Storyboard.TargetName="masterHead_bg" Storyboard.TargetProperty="(Shape.Fill).(SolidColorBrush.Color)">
+							<EasingColorKeyFrame KeyTime="00:00:00" Value="#FF1A2C31"/>
+						</ColorAnimationUsingKeyFrames>
+						<ColorAnimationUsingKeyFrames BeginTime="00:00:00" Duration="00:00:00.0010000" Storyboard.TargetName="footer" Storyboard.TargetProperty="(Shape.Fill).(SolidColorBrush.Color)">
+							<EasingColorKeyFrame KeyTime="00:00:00" Value="#FF314654"/>
+						</ColorAnimationUsingKeyFrames>
+						<ColorAnimationUsingKeyFrames BeginTime="00:00:00" Duration="00:00:00.0010000" Storyboard.TargetName="LayoutRoot" Storyboard.TargetProperty="(Panel.Background).(GradientBrush.GradientStops)[0].(GradientStop.Color)">
+							<EasingColorKeyFrame KeyTime="00:00:00" Value="#FF3F5A67"/>
+						</ColorAnimationUsingKeyFrames>
+						<ObjectAnimationUsingKeyFrames BeginTime="00:00:00" Duration="00:00:00.0010000" Storyboard.TargetName="levelHostControl" Storyboard.TargetProperty="(LevelHostControl.HostFile)">
+							<DiscreteObjectKeyFrame KeyTime="00:00:00" Value="Level2.xaml"/>
+						</ObjectAnimationUsingKeyFrames>
+					</Storyboard>
+				</VisualState>
+				<VisualState x:Name="Level3">
+					<Storyboard>
+						<ColorAnimationUsingKeyFrames BeginTime="00:00:00" Duration="00:00:00.0010000" Storyboard.TargetName="background" Storyboard.TargetProperty="(Shape.Fill).(GradientBrush.GradientStops)[0].(GradientStop.Color)">
+							<EasingColorKeyFrame KeyTime="00:00:00" Value="#FF550A8D"/>
+						</ColorAnimationUsingKeyFrames>
+						<ColorAnimationUsingKeyFrames BeginTime="00:00:00" Duration="00:00:00.0010000" Storyboard.TargetName="masterHead_bg" Storyboard.TargetProperty="(Shape.Fill).(SolidColorBrush.Color)">
+							<EasingColorKeyFrame KeyTime="00:00:00" Value="#FF2B1A31"/>
+						</ColorAnimationUsingKeyFrames>
+						<ColorAnimationUsingKeyFrames BeginTime="00:00:00" Duration="00:00:00.0010000" Storyboard.TargetName="footer" Storyboard.TargetProperty="(Shape.Fill).(SolidColorBrush.Color)">
+							<EasingColorKeyFrame KeyTime="00:00:00" Value="#FF422C4A"/>
+						</ColorAnimationUsingKeyFrames>
+						<ColorAnimationUsingKeyFrames BeginTime="00:00:00" Duration="00:00:00.0010000" Storyboard.TargetName="LayoutRoot" Storyboard.TargetProperty="(Panel.Background).(GradientBrush.GradientStops)[0].(GradientStop.Color)">
+							<EasingColorKeyFrame KeyTime="00:00:00" Value="#FF5E3E69"/>
+						</ColorAnimationUsingKeyFrames>
+						<ObjectAnimationUsingKeyFrames BeginTime="00:00:00" Duration="00:00:00.0010000" Storyboard.TargetName="levelHostControl" Storyboard.TargetProperty="(LevelHostControl.HostFile)">
+							<DiscreteObjectKeyFrame KeyTime="00:00:00" Value="Level3.xaml"/>
+						</ObjectAnimationUsingKeyFrames>
+					</Storyboard>
+				</VisualState>
+				<VisualState x:Name="GameOverLevel"/>
+				
+			</VisualStateGroup>
+		</VisualStateManager.VisualStateGroups>
+		<Canvas x:Name="BeeHive" Height="580" Width="810" Clip="M0,0L810,0 810,580 0,580z" HorizontalAlignment="Center" Margin="0,15,0,0" VerticalAlignment="Center">
+			<System_Windows_Interactivity:Interaction.Behaviors>
+				<local:GameEnvironment x:Name="gameEnvironment" GameOverSound="Audio/gameover.mp3" GameOverState="ShowGameOver" NextLevelSound="Audio/start.mp3">
+					<System_Windows_Interactivity:Interaction.Triggers>
+						<local:CollisionTrigger SourceName="BOTTOM_WALL">
+							<System_Windows_Interactivity:InvokeCommandAction CommandName="ResetCommand"/>
+						</local:CollisionTrigger>
+					</System_Windows_Interactivity:Interaction.Triggers>
+				</local:GameEnvironment>
+			</System_Windows_Interactivity:Interaction.Behaviors>
+			<System_Windows_Interactivity:Interaction.Triggers>
+				<System_Windows_Interactivity:EventTrigger EventName="Loaded">
+					<ic:GoToStateAction StateName="WaitStart"/>
+				</System_Windows_Interactivity:EventTrigger>
+				<ii:KeyTrigger Key="NumPad3">
+					<ic:GoToStateAction StateName="Level3"/>
+				</ii:KeyTrigger>
+				<System_Windows_Interactivity:EventTrigger SourceName="gameEnvironment" EventName="GameOver">
+					<im:PlaySoundAction Source="Audio/gameover.mp3"/>
+				</System_Windows_Interactivity:EventTrigger>
+			</System_Windows_Interactivity:Interaction.Triggers>
+			<Path x:Name="background" Height="582" Width="812" Canvas.Left="-1" Canvas.Top="-1" Data="F1M1,1C1,1,811,1,811,1C811,1,811,581,811,581C811,581,1,581,1,581C1,581,1,1,1,1z" UseLayoutRounding="False">
+				<Path.OpacityMask>
+					<RadialGradientBrush RadiusX="0.358" RadiusY="0.5">
+						<GradientStop Color="#FF000000" Offset="0"/>
+						<GradientStop Color="#FF000000" Offset="1"/>
+					</RadialGradientBrush>
+				</Path.OpacityMask>
+				<Path.Fill>
+					<RadialGradientBrush RadiusX="0.358" RadiusY="0.5">
+						<GradientStop Color="#FF5F6B30" Offset="0"/>
+						<GradientStop Color="#FF000000" Offset="1"/>
+					</RadialGradientBrush>
+				</Path.Fill>
+			</Path>
+			<Image x:Name="grid" Height="580" Width="768" Source="BeeHive_Images/grid.PNG" Stretch="Fill" Opacity="0.65" Canvas.Left="33"/>
+			<local:LevelHostControl x:Name="levelHostControl" Height="580" Width="810" Canvas.Left="0" Canvas.Top="0" HostFile="Level1.xaml"/>
+			<Image x:Name="score" Height="12" Width="116" Opacity="0.6" Canvas.Left="51" Canvas.Top="14" Source="BeeHive_Images/score.png"/>
+			<Image x:Name="lives" Height="12" Width="97" Opacity="0.4" Canvas.Left="652" Canvas.Top="14" Source="BeeHive_Images/lives.png"/>
+			<Image x:Name="LEFT_WALL" Height="580" Width="12" Opacity="0.102" Canvas.Left="0" Canvas.Top="0" Source="BeeHive_Images/LEFT_WALL.png">
+				<System_Windows_Interactivity:Interaction.Triggers>
+					<local:CollisionTrigger>
+						<im:PlaySoundAction Source="Audio/wall.mp3"/>
+					</local:CollisionTrigger>
+				</System_Windows_Interactivity:Interaction.Triggers>
+				<System_Windows_Interactivity:Interaction.Behaviors>
+					<local:CollisionBehavior/>
+				</System_Windows_Interactivity:Interaction.Behaviors>
+			</Image>
+			<Image x:Name="TOP_WALL" Height="32" Width="810" Opacity="0.102" Canvas.Left="0" Canvas.Top="0" Source="BeeHive_Images/TOP_WALL.png">
+				<System_Windows_Interactivity:Interaction.Triggers>
+					<local:CollisionTrigger>
+						<im:PlaySoundAction Source="Audio/wall.mp3"/>
+					</local:CollisionTrigger>
+				</System_Windows_Interactivity:Interaction.Triggers>
+				<System_Windows_Interactivity:Interaction.Behaviors>
+					<local:CollisionBehavior/>
+				</System_Windows_Interactivity:Interaction.Behaviors>
+			</Image>
+			<Image x:Name="RIGHT_WALL" Height="580" Width="12" Opacity="0.102" Canvas.Left="798" Canvas.Top="0" Source="BeeHive_Images/RIGHT_WALL.png">
+				<System_Windows_Interactivity:Interaction.Triggers>
+					<local:CollisionTrigger>
+						<im:PlaySoundAction Source="Audio/wall.mp3"/>
+					</local:CollisionTrigger>
+				</System_Windows_Interactivity:Interaction.Triggers>
+				<System_Windows_Interactivity:Interaction.Behaviors>
+					<local:CollisionBehavior/>
+				</System_Windows_Interactivity:Interaction.Behaviors>
+			</Image>
+			<Image x:Name="BOTTOM_WALL" Height="16" Width="810" Canvas.Left="0" Canvas.Top="564" Source="BeeHive_Images/BOTTOM_WALL.png">
+				<System_Windows_Interactivity:Interaction.Triggers>
+					<local:CollisionTrigger>
+						<im:PlaySoundAction Source="Audio/lostLife.mp3"/>
+					</local:CollisionTrigger>
+				</System_Windows_Interactivity:Interaction.Triggers>
+				<System_Windows_Interactivity:Interaction.Behaviors>
+					<local:CollisionBehavior/>
+				</System_Windows_Interactivity:Interaction.Behaviors>
+			</Image>
+			<Image x:Name="BALL" Height="22" Width="22" Canvas.Left="381" Canvas.Top="414" Source="BeeHive_Images/BALL.png" Tag="CollideWithAll">
+				<System_Windows_Interactivity:Interaction.Behaviors>
+					<local:MotionBehavior Direction="-65" Speed="10"/>
+					<local:MovableBehavior/>
+				</System_Windows_Interactivity:Interaction.Behaviors>
+				<System_Windows_Interactivity:Interaction.Triggers>
+					<System_Windows_Interactivity:EventTrigger EventName="MouseLeftButtonUp">
+						<im:PlaySoundAction Source="Audio/start.mp3"/>
+						<ic:GoToStateAction StateName="StartGame"/>
+					</System_Windows_Interactivity:EventTrigger>
+				</System_Windows_Interactivity:Interaction.Triggers>
+			</Image>
+			<Image x:Name="PADDLE" Height="21" Width="117" Canvas.Left="418" Canvas.Top="496" Source="BeeHive_Images/PADDLE.png" RenderTransformOrigin="0.5,0.5">
+				<System_Windows_Interactivity:Interaction.Behaviors>
+					<local:FollowMouseBehavior Margin="15,0" FollowPosition="X" />
+					<local:CollisionBehavior/>
+					<local:MovableBehavior/>
+				</System_Windows_Interactivity:Interaction.Behaviors>
+				<System_Windows_Interactivity:Interaction.Triggers>
+					<System_Windows_Interactivity:EventTrigger/>
+					<local:CollisionTrigger>
+						<im:PlaySoundAction Source="Audio/paddle.mp3"/>
+					</local:CollisionTrigger>
+				</System_Windows_Interactivity:Interaction.Triggers>
+			</Image>
+			<TextBlock x:Name="ScoreText" Canvas.Left="51" Canvas.Top="31" FontFamily="Arial" FontSize="17" FontWeight="Bold" Foreground="#FFFFFFFF" LineHeight="17" LineStackingStrategy="BlockLineHeight" Text="0" TextWrapping="Wrap">
+				<System_Windows_Interactivity:Interaction.Behaviors>
+					<local:GamePropertyUpdateBehavior PropertyName="Score"/>
+				</System_Windows_Interactivity:Interaction.Behaviors>
+			</TextBlock>
+			<TextBlock x:Name="LivesText" Canvas.Left="654" Canvas.Top="31" FontFamily="Arial" FontSize="18" FontWeight="Bold" Foreground="#FFFFFFFF" LineHeight="18" LineStackingStrategy="BlockLineHeight" Text="4" TextWrapping="Wrap">
+				<System_Windows_Interactivity:Interaction.Triggers>
+					<local:CollisionTrigger SourceName="BOTTOM_WALL">
+						<local:ModifyGamePropertyAction IncrementValue="-1" PropertyName="Lives"/>
+					</local:CollisionTrigger>
+				</System_Windows_Interactivity:Interaction.Triggers>
+				<System_Windows_Interactivity:Interaction.Behaviors>
+					<local:GamePropertyUpdateBehavior PropertyName="Lives"/>
+				</System_Windows_Interactivity:Interaction.Behaviors>
+			</TextBlock>
+			<Image x:Name="ClicktoStart" Height="12" Width="290" Source="BeeHive_Images/ClicktoStart.PNG" Stretch="Fill" IsHitTestVisible="False" Canvas.Top="447" Canvas.Left="253"/>
+			<Image x:Name="GameOver" Height="54" Width="388" Source="BeeHive_Images/GameOver.PNG" Stretch="Fill" Canvas.Left="201" Canvas.Top="250" Visibility="Collapsed"/>
+			<TextBlock x:Name="LastScoreText" Canvas.Left="240" Canvas.Top="31" FontFamily="Arial" FontSize="17" FontWeight="Bold" Foreground="#FFFFFFFF" LineHeight="17" LineStackingStrategy="BlockLineHeight" Text="0" TextWrapping="Wrap" Opacity="0.6">
+				<System_Windows_Interactivity:Interaction.Behaviors>
+					<local:GamePropertyUpdateBehavior PropertyName="LastScore"/>
+				</System_Windows_Interactivity:Interaction.Behaviors>
+			</TextBlock>
+			<TextBlock x:Name="HiScoreText" FontFamily="Arial" FontSize="17" FontWeight="Bold" Foreground="#FFFFFFFF" LineHeight="17" LineStackingStrategy="BlockLineHeight" TextWrapping="Wrap" Canvas.Left="410" Canvas.Top="31" Opacity="0.6" Text="0000">
+				<System_Windows_Interactivity:Interaction.Behaviors>
+					<local:GamePropertyUpdateBehavior PropertyName="HighScore"/>
+				</System_Windows_Interactivity:Interaction.Behaviors>
+			</TextBlock>
+			<Image Height="12" Width="92" Source="BeeHive_Images/last.PNG" Stretch="Fill" Opacity="0.4" Canvas.Top="14" Canvas.Left="240"/>
+			<Image Height="12" Width="156" Source="BeeHive_Images/hiscore.png" Stretch="Fill" Opacity="0.4" Canvas.Top="14" Canvas.Left="410"/>
+		</Canvas>
+		
+		<Grid x:Name="frame" Height="607" HorizontalAlignment="Center" Margin="5,5,5,5" VerticalAlignment="Center" Width="810">
+			<Grid x:Name="masterHead" Height="20" VerticalAlignment="Top" Background="{x:Null}" IsHitTestVisible="False">
+				<Rectangle x:Name="masterHead_bg" Fill="#FF28311A" Stroke="{x:Null}"/>				
+			</Grid>
+			<Rectangle x:Name="footer" Fill="#FF484C44" Stroke="{x:Null}" Height="5" HorizontalAlignment="Stretch" VerticalAlignment="Bottom" IsHitTestVisible="False" Canvas.ZIndex="9999" Opacity="0.75"/>
+		</Grid>
+	</Grid>
+</UserControl>

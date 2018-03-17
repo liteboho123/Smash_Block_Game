@@ -1,0 +1,37 @@
+﻿<Application
+	xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+	xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+	xmlns:local="clr-namespace:BeeHive"
+	x:Class="BeeHive.App">
+	<Application.Resources>
+		<!-- Resources scoped at the Application level should be defined here. -->
+		<Style x:Key="YellowBlockStyle" TargetType="local:BlockControl">
+			<Setter Property="ImageSource" Value="BeeHive_Images/blockYellow.png"/>
+			<Setter Property="ScoreValue" Value="5"/>
+		</Style>
+		<Style x:Key="OrangeBlockStyle" TargetType="local:BlockControl">
+			<Setter Property="ImageSource" Value="BeeHive_Images/BlockOrange.png"/>
+			<Setter Property="ScoreValue" Value="10"/>
+		</Style>
+		<Style x:Key="RedBlockStyle" TargetType="local:BlockControl">
+			<Setter Property="ImageSource" Value="BeeHive_Images/BlockRed.png"/>
+			<Setter Property="ScoreValue" Value="15"/>
+		</Style>
+		<Style x:Key="PinkBlockStyle" TargetType="local:BlockControl">
+			<Setter Property="ImageSource" Value="BeeHive_Images/blockPink.PNG"/>
+			<Setter Property="ScoreValue" Value="50"/>
+		</Style>
+		<Style x:Key="PurpleBlockStyle" TargetType="local:BlockControl">
+			<Setter Property="ImageSource" Value="BeeHive_Images/blockViolet.PNG"/>
+			<Setter Property="ScoreValue" Value="75"/>
+		</Style>
+		<Style x:Key="SilverBlockStyle" TargetType="local:BlockControl">
+			<Setter Property="ImageSource" Value="BeeHive_Images/blockWhite.PNG"/>
+			<Setter Property="ScoreValue" Value="100"/>
+		</Style>
+		<Style x:Key="BlueBlockStyle" TargetType="local:BlockControl">
+			<Setter Property="ImageSource" Value="BeeHive_Images/blockBlue.PNG"/>
+			<Setter Property="ScoreValue" Value="25"/>
+		</Style>
+	</Application.Resources>
+</Application>

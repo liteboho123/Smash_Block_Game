@@ -1,0 +1,174 @@
+﻿<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{E3A35378-7139-4078-94CE-E50D81610A84}</ProjectGuid>
+    <ProjectTypeGuids>{A1591282-1198-4647-A2B1-27E5FF5F6F3B};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <DefaultClrNameSpace>BeeHive</DefaultClrNameSpace>
+    <RootNamespace>BeeHive</RootNamespace>
+    <AssemblyName>BeeHive</AssemblyName>
+    <ApplicationVersion>1.0.0.*</ApplicationVersion>
+    <ApplicationRevision>0</ApplicationRevision>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>    <SilverlightVersion>$(TargetFrameworkVersion)</SilverlightVersion>
+    <TargetFrameworkIdentifier>Silverlight</TargetFrameworkIdentifier>
+    <SilverlightApplication>true</SilverlightApplication>
+    <XapOutputs>true</XapOutputs>
+    <XapFilename>BeeHive.xap</XapFilename>
+    <GenerateSilverlightManifest>true</GenerateSilverlightManifest>
+    <SilverlightManifestTemplate>Properties\AppManifest.xml</SilverlightManifestTemplate>
+    <SilverlightAppEntry>BeeHive.App</SilverlightAppEntry>
+    <CreateTestPage>true</CreateTestPage>
+    <ValidateXaml>true</ValidateXaml>
+    <UsePlatformExtensions>true</UsePlatformExtensions>
+    <ThrowErrorsInValidation>true</ThrowErrorsInValidation>
+    <TestPageFileName>TestPage.html</TestPageFileName>
+    <ExpressionBlendVersion>4.0.20525.0</ExpressionBlendVersion>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>Bin\Debug</OutputPath>
+    <DefineConstants>DEBUG;TRACE;SILVERLIGHT</DefineConstants>
+    <NoStdLib>true</NoStdLib>
+    <NoConfig>true</NoConfig>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>Bin\Release</OutputPath>
+    <DefineConstants>TRACE;SILVERLIGHT</DefineConstants>
+    <NoStdLib>true</NoStdLib>
+    <NoConfig>true</NoConfig>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.Expression.Interactions"/>
+    <Reference Include="System.Windows" />
+    <Reference Include="mscorlib" />
+    <Reference Include="system" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Net" />
+    <Reference Include="System.Windows.Interactivity"/>
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Windows.Browser" />
+  </ItemGroup>
+  <ItemGroup>
+    <ApplicationDefinition Include="App.xaml">
+      <Generator>MSBuild:MarkupCompilePass1</Generator>
+      <SubType>Designer</SubType>
+    </ApplicationDefinition>
+    <Compile Include="App.xaml.cs">
+      <DependentUpon>App.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="BlockControl.xaml.cs">
+      <DependentUpon>BlockControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="CollisionBehavior.cs" />
+    <Compile Include="CollisionTrigger.cs" />
+    <Compile Include="ElementRemovedTrigger.cs" />
+    <Compile Include="GameBehaviorBase.cs" />
+    <Compile Include="GameEnvironmentWalker.cs" />
+    <Compile Include="GamePropertyChangeTrigger.cs" />
+    <Compile Include="GameScoreAction.cs" />
+    <Compile Include="GameTrigger.cs" />
+    <Compile Include="GamePropertyUpdateBehavior.cs" />
+    <Compile Include="GameTriggerAction.cs" />
+    <Compile Include="GoToNextLevelBehavior.cs" />
+    <Compile Include="ICollidable.cs" />
+    <Compile Include="IPropertyDictionary.cs" />
+    <Compile Include="FollowMouseBehavior.cs" />
+    <Compile Include="GameEnvironment.cs" />
+    <Compile Include="LevelHostControl.xaml.cs">
+      <DependentUpon>LevelHostControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="MainPage.xaml.cs">
+      <DependentUpon>MainPage.xaml</DependentUpon>
+    </Compile>
+    <Page Include="BlockControl.xaml">
+      <Generator>MSBuild:MarkupCompilePass1</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Level1.xaml">
+      <Generator>MSBuild:MarkupCompilePass1</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Level2.xaml">
+      <Generator>MSBuild:MarkupCompilePass1</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Level3.xaml">
+      <Generator>MSBuild:MarkupCompilePass1</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="LevelHostControl.xaml">
+      <Generator>MSBuild:MarkupCompilePass1</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="MainPage.xaml">
+      <Generator>MSBuild:MarkupCompilePass1</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Compile Include="ModifyGamePropertyAction.cs" />
+    <Compile Include="MotionBehavior.cs" />
+    <Compile Include="MovableBehavior.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="PropertyDictionary.cs" />
+    <Compile Include="RemoveCollisionElementAction.cs" />
+    <Compile Include="Vector.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="BeeHive_Images\BALL.png" />
+    <Resource Include="BeeHive_Images\BlockOrange.png" />
+    <Resource Include="BeeHive_Images\BlockRed.png" />
+    <Resource Include="BeeHive_Images\blockYellow.png" />
+    <Resource Include="BeeHive_Images\BOTTOM_WALL.png" />
+    <Resource Include="BeeHive_Images\LEFT_WALL.png" />
+    <Resource Include="BeeHive_Images\lives.png" />
+    <Resource Include="BeeHive_Images\PADDLE.png" />
+    <Resource Include="BeeHive_Images\RIGHT_WALL.png" />
+    <Resource Include="BeeHive_Images\score.png" />
+    <Resource Include="BeeHive_Images\TOP_WALL.png" />
+    <Resource Include="logo_blend311.PNG" />
+    <Resource Include="logo_SP311.PNG" />
+    <Resource Include="Properties\AppManifest.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Audio\block.mp3">
+    </Resource>
+    <Resource Include="Audio\lostLife.mp3">
+    </Resource>
+    <Resource Include="Audio\paddle.mp3">
+    </Resource>
+    <Resource Include="Audio\start.mp3">
+    </Resource>
+    <Resource Include="Audio\wall.mp3">
+    </Resource>
+    <Resource Include="BeeHive_Images\ClicktoStart.PNG" />
+    <Resource Include="BeeHive_Images\GameOver.PNG" />
+    <Resource Include="BeeHive_Images\hiscore.png" />
+    <Resource Include="BeeHive_Images\last.PNG" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Audio\gameover.mp3">
+    </Resource>
+    <Resource Include="BeeHive_Images\blockBlue.PNG" />
+    <Resource Include="BeeHive_Images\blockPink.PNG" />
+    <Resource Include="BeeHive_Images\blockViolet.PNG" />
+    <Resource Include="BeeHive_Images\blockWhite.PNG" />
+    <Resource Include="BeeHive_Images\grid.PNG" />
+  </ItemGroup>
+  <Import Project="$(MSBuildExtensionsPath)\Microsoft\Silverlight\$(SilverlightVersion)\Microsoft.Silverlight.CSharp.targets" />
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{A1591282-1198-4647-A2B1-27E5FF5F6F3B}">
+        <SilverlightProjectProperties />
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+</Project>
